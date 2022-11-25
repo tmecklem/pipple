@@ -28,13 +28,20 @@ defmodule Pipple.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:jason, "~> 1.3"},
+      {:plug_cowboy, ">= 1.0.0", optional: true},
+      {:tesla, "~> 1.0"},
+      {:timex, "~> 3.7"},
+      {:typed_struct, "~> 0.3.0"}
     ]
   end
 
   defp description do
     ~s"""
-    Pipple is a client package for communicating with Rippling's API (rippling.com)
+    Pipple is an Elixir client package for communicating with Rippling's API (rippling.com)
     """
   end
 
