@@ -42,9 +42,9 @@ defmodule Pipple.Employee do
         title: title,
         department: department,
         custom_fields: custom_fields,
-        updated_at: Timex.parse(updated_at, "{ISO:Extended}"),
-        created_at: Timex.parse(created_at, "{ISO:Extended}"),
-        start_date: Timex.parse(start_date, "%Y-%m-%d", :strftime),
+        updated_at: Timex.parse!(updated_at, "{ISO:Extended}"),
+        created_at: Timex.parse!(created_at, "{ISO:Extended}"),
+        start_date: Timex.parse!(start_date, "%Y-%m-%d", :strftime),
         manager: manager
       }
     )
